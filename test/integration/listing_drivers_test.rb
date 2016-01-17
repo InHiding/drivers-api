@@ -4,7 +4,7 @@ class ListingDriversTest < ActionDispatch::IntegrationTest
   test "list all drivers" do
     get drivers_path 
 
-    assert response.success?
+    assert_response :success
     refute_empty response.body
   end
 
@@ -29,19 +29,19 @@ class ListingDriversTest < ActionDispatch::IntegrationTest
   test 'list non existant driver' do
     get drivers_path, name: 'no one'
 
-    assert response.success?
+    assert_response :success
     assert_equal [], JSON.parse(response.body)
 
     get drivers_path, car_plate: 'ABC0000'
 
-    assert response.success?
+    assert_response :success
     assert_equal [], JSON.parse(response.body)
   end
 
   private
 
   def assert_found(driver)
-    assert response.success?
+    assert_response :success
 
     drivers = JSON.parse(response.body)
     assert_equal 1, drivers.length
