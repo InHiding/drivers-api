@@ -2,37 +2,37 @@ require 'test_helper'
 
 class ListingDriversTest < ActionDispatch::IntegrationTest
   test "list all drivers" do
-    get '/drivers'
+    get drivers_path 
 
     assert response.success?
     refute_empty response.body
   end
 
   test 'list drivers by name' do
-    get '/drivers?name=Driver1'
+    get drivers_path, name: 'Driver1' 
 
     assert_found(:one)
   end 
 
   test 'list drivers by plate' do
-    get '/drivers?car_plate=ABC1234'
+    get drivers_path, car_plate: 'ABC1234' 
 
     assert_found(:one)
   end
 
   test 'list drivers by name and plate' do
-    get '/drivers?name=Driver2&car_plate=DEF5678'
+    get drivers_path, name: 'Driver2', car_plate: 'DEF5678' 
 
     assert_found(:two)
   end
 
   test 'list non existant driver' do
-    get '/drivers?name=noone'
+    get drivers_path, name: 'no one'
 
     assert response.success?
     assert_equal [], JSON.parse(response.body)
 
-    get '/drivers?car_plate=ABC0000'
+    get drivers_path, car_plate: 'ABC0000'
 
     assert response.success?
     assert_equal [], JSON.parse(response.body)
