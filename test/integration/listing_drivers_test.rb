@@ -38,6 +38,16 @@ class ListingDriversTest < ActionDispatch::IntegrationTest
     assert_equal [], JSON.parse(response.body)
   end
 
+  test 'list driver by id' do                                                          
+    driver = drivers(:one)                                                                
+
+    get driver_path(driver.id)
+
+    assert_equal 200, response.status                                                     
+    driver_response = JSON.parse(response.body, symbolize_names: true)                    
+    assert_equal driver.name, driver_response[:name]                                      
+  end 
+
   private
 
   def assert_found(driver)
