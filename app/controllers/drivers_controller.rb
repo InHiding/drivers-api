@@ -3,7 +3,7 @@ class DriversController < ApplicationController
     drivers = Driver.all
 
     if filters = driver_filters
-      drivers = Driver.where(filters)
+      drivers = drivers.where(filters)
     end
 
     render json: drivers
@@ -16,7 +16,7 @@ class DriversController < ApplicationController
 
   def create
   end
-
+  
   private
 
   def driver_params
