@@ -15,6 +15,13 @@ class DriversController < ApplicationController
   end
 
   def create
+    driver = Driver.new(driver_params)
+
+    if driver.save
+      head :no_content, location: driver 
+    else
+      render json: driver.errors, status: :unprocessable_entity
+    end
   end
   
   private
