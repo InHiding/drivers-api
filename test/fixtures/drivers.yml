@@ -2,12 +2,12 @@
 
 one:
   name: Driver1 
-  car_plate: ABC1234
+  car_plate: 'ABC 1234'
   created_at: <%= 2.days.from_now.to_s :db %>
   updated_at: <%= 2.days.from_now.to_s :db %>
 
 two:
   name: Driver2
-  car_plate: DEF5678
+  car_plate: 'DEF 5678'
   created_at: <%= 2.days.from_now.to_s :db %>
   updated_at: <%= 1.days.from_now.to_s :db %>

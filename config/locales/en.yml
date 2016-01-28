@@ -20,4 +20,4 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  plate_format: 'Invalid format. Use: XXX NNNN, where X = letter, A-Z and N = number, 0-9' 
