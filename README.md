@@ -1,4 +1,4 @@
-# drivers_api
+# Drivers API
 Simple Taxi Drivers API
 
 ## Goals
