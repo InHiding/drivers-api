@@ -21,3 +21,4 @@
 
 en:
   plate_format: 'Invalid format. Use: XXX NNNN, where X = letter, A-Z and N = number, 0-9' 
+  no_position: 'Position not available for this driver.'
