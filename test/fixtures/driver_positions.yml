@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitude: 9.99
+  longitude: -9.99
+  driver_available: true
+  driver_id: 1 
+
+two:
+  latitude: -9.99
+  longitude: 9.99
+  driver_available: false
+  driver_id: 2

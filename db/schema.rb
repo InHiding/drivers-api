@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112101111) do
+ActiveRecord::Schema.define(version: 20160201184443) do
+
+  create_table "driver_positions", force: :cascade do |t|
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.boolean  "driver_available", default: false
+    t.integer  "driver_id",                        null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "driver_positions", ["driver_id"], name: "index_driver_positions_on_driver_id", unique: true
 
   create_table "drivers", force: :cascade do |t|
     t.string   "name"
