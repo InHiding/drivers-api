@@ -19,6 +19,21 @@ class DriverPositionsController < ApplicationController
     end
   end
 
+  def update
+    position = DriverPosition.find_by(id: params[:id], driver_id: params[:driver_id])
+
+    unless position
+      head :not_found
+      return
+    end
+    
+    if(position.update(driver_position_params))
+      render json: position
+    else
+      render json: position.errors, status: :unprocessable_entity
+    end
+  end
+  
   def search
     unless params[:sw] && params[:ne]
       render json: I18n.t('invalid_area'), status: :bad_request
