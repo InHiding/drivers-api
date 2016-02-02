@@ -24,3 +24,14 @@ The objective is to use as much as possible only default rails features, avoidin
 external gems when possible. 
 The API is really simple, it permits create and find drivers, and also set driver's current
 position and search for drivers within a region.
+
+## Running
+As this is a very simple Rails project, all you need is to clone the project, and:
+<!-- language: bash-js -->
+bundle
+bundle rake db:create db:migrate
+<!-- >
+ 
+Then just start rails server.
+:)
+
