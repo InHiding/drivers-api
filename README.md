@@ -27,10 +27,12 @@ position and search for drivers within a region.
 
 ## Running
 As this is a very simple Rails project, all you need is to clone the project, and:
-<!-- language: language-bash -->
+
+```bash
 bundle
 bundle rake db:create db:migrate
- 
+```
+
 Then just start rails server.
 :)
 
