@@ -30,7 +30,7 @@ As this is a very simple Rails project, all you need is to clone the project, an
 
 ```bash
 bundle
-bundle rake db:create db:migrate
+bundle exec rake db:create db:migrate
 ```
 
 Then just start rails server.
